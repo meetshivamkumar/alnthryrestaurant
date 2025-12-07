@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alnthry Restaurant مطعم النثري - Authentic Pigeon & Chicken in Mesaieed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .luxury-gradient {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #B22222 100%);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%);
+        }
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .text-gold {
+            color: #D4AF37;
+        }
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .shimmer {
+            background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.7) 50%, transparent 60%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position-x: -100%; }
+            100% { background-position-x: 100%; }
+        }
+        .menu-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .luxury-shadow {
+            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.1);
+        }
+        .rotate-slow {
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 luxury-shadow">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center">
+                        <i class="fas fa-dove text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-playfair text-2xl font-bold text-gray-900">Alnthry</h1>
+                        <p class="text-xs text-gray-600 font-inter">مطعم النثري</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-red-700 transition font-medium">Home</a>
+                    <a href="#menu" class="text-gray-700 hover:text-red-700 transition font-medium">Menu</a>
+                    <a href="#specialties" class="text-gray-700 hover:text-red-700 transition font-medium">Specialties</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-red-700 transition font-medium">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-700 transition font-medium">Contact</a>
+                    <a href="tel:+97459922775" class="luxury-gradient text-white px-6 py-2 rounded-full hover:shadow-xl transition font-semibold">
+                        <i class="fas fa-phone mr-2"></i>Reserve Now
+                    </a>
+                </div>
+                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 py-2">Home</a>
+                <a href="#menu" class="block text-gray-700 py-2">Menu</a>
+                <a href="#specialties" class="block text-gray-700 py-2">Specialties</a>
+                <a href="#reviews" class="block text-gray-700 py-2">Reviews</a>
+                <a href="#contact" class="block text-gray-700 py-2">Contact</a>
+                <a href="tel:+97459922775" class="block luxury-gradient text-white px-6 py-3 rounded-full text-center">
+                    Reserve Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden luxury-gradient hero-pattern">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white fade-in">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="flex text-gold">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gold font-semibold">4.8 (17 Reviews)</span>
+                        <span class="bg-gold/20 border border-gold text-gold px-3 py-1 rounded-full text-sm">Top Rated</span>
+                    </div>
+                    <h1 class="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Authentic <span class="text-gold">Pigeon</span> & Chicken Delicacies
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-200 font-light">Experience the finest traditional flavors of Qatar with our signature pigeon dishes and succulent chicken preparations</p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#menu" class="gold-gradient text-gray-900 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition transform hover:scale-105 inline-flex items-center">
+                            <i class="fas fa-book-open mr-2"></i>Explore Menu
+                        </a>
+                        <a href="tel:+97459922775" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-red-800 transition inline-flex items-center">
+                            <i class="fas fa-phone mr-2"></i>+974 5992 2775
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="bg-white/10 backdrop-blur-md rounded-lg p-3">
+                            <i class="fas fa-utensils text-gold text-2xl mb-2"></i>
+                            <p class="text-sm">Dine-in</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md rounded-lg p-3">
+                            <i class="fas fa-car text-gold text-2xl mb-2"></i>
+                            <p class="text-sm">Drive-through</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md rounded-lg p-3">
+                            <i class="fas fa-truck text-gold text-2xl mb-2"></i>
+                            <p class="text-sm">Delivery</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 gold-gradient opacity-20 rounded-full blur-3xl rotate-slow"></div>
+                    <div class="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover-lift">
+                        <div class="text-center">
+                            <div class="w-32 h-32 mx-auto mb-6 bg-gold rounded-full flex items-center justify-center shimmer">
+                                <i class="fas fa-dove text-white text-6xl"></i>
+                            </div>
+                            <h3 class="font-playfair text-3xl font-bold text-white mb-2">QAR 1-50</h3>
+                            <p class="text-gray-200 text-lg mb-4">Per Person</p>
+                            <div class="flex justify-center space-x-2 text-gold">
+                                <i class="fas fa-dollar-sign"></i>
+                                <i class="fas fa-dollar-sign"></i>
+                                <i class="fas fa-dollar-sign opacity-30"></i>
+                                <i class="fas fa-dollar-sign opacity-30"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center hover-lift">
+                    <div class="w-20 h-20 mx-auto mb-4 luxury-gradient rounded-full flex items-center justify-center">
+                        <i class="fas fa-medal text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-gray-900 mb-2">Premium Quality</h3>
+                    <p class="text-gray-600">Finest ingredients sourced daily</p>
+                </div>
+                <div class="text-center hover-lift">
+                    <div class="w-20 h-20 mx-auto mb-4 gold-gradient rounded-full flex items-center justify-center">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-gray-900 mb-2">Fast Service</h3>
+                    <p class="text-gray-600">Quick preparation & delivery</p>
+                </div>
+                <div class="text-center hover-lift">
+                    <div class="w-20 h-20 mx-auto mb-4 luxury-gradient rounded-full flex items-center justify-center">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-gray-900 mb-2">Traditional Recipes</h3>
+                    <p class="text-gray-600">Authentic Qatari flavors</p>
+                </div>
+                <div class="text-center hover-lift">
+                    <div class="w-20 h-20 mx-auto mb-4 gold-gradient rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-gray-900 mb-2">Made with Love</h3>
+                    <p class="text-gray-600">Crafted with passion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section id="specialties" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-5xl font-bold text-gray-900 mb-4">Our <span class="text-red-700">Signature</span> Dishes</h2>
+                <p class="text-gray-600 text-lg">Discover what makes Alnthry Restaurant special</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="menu-card rounded-2xl p-6 luxury-shadow hover-lift">
+                    <div class="h-48 luxury-gradient rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <div class="absolute inset-0 shimmer"></div>
+                        <i class="fas fa-dove text-white text-6xl relative z-10"></i>
+                    </div>
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-playfair text-2xl font-bold text-gray-900">Premium Pigeon</h3>
+                        <span class="bg-gold text-white px-3 py-1 rounded-full text-sm font-bold">BEST SELLER</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Best pigeon ever" - Our signature dish praised by customers, prepared with traditional spices</p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-3xl font-bold text-red-700">QAR 35</span>
+                            <div class="flex text-gold text-sm mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button class="luxury-gradient text-white px-6 py-3 rounded-full hover:shadow-xl transition">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-2xl p-6 luxury-shadow hover-lift">
+                    <div class="h-48 gold-gradient rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <div class="absolute inset-0 shimmer"></div>
+                        <i class="fas fa-drumstick-bite text-white text-6xl relative z-10"></i>
+                    </div>
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-playfair text-2xl font-bold text-gray-900">Chicken Nuttery</h3>
+                        <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">POPULAR</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Tender chicken with our special nuttery preparation, a perfect blend of flavors</p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-3xl font-bold text-red-700">QAR 28</span>
+                            <div class="flex text-gold text-sm mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button class="luxury-gradient text-white px-6 py-3 rounded-full hover:shadow-xl transition">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-2xl p-6 luxury-shadow hover-lift">
+                    <div class="h-48 luxury-gradient rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <div class="absolute inset-0 shimmer"></div>
+                        <i class="fas fa-bowl-rice text-white text-6xl relative z-10"></i>
+                    </div>
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-playfair text-2xl font-bold text-gray-900">Delicious Rice</h3>
+                        <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">MUST TRY</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Aromatic rice cooked to perfection, customers say it's "delicious 😋"</p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-3xl font-bold text-red-700">QAR 15</span>
+                            <div class="flex text-gold text-sm mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button class="luxury-gradient text-white px-6 py-3 rounded-full hover:shadow-xl transition">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Experience <span class="text-red-700">Authentic</span> Qatari Cuisine
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6">
+                        At Alnthry Restaurant, we pride ourselves on serving the most authentic and delicious pigeon and chicken dishes in Mesaieed. Our chefs use traditional recipes passed down through generations.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 luxury-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Premium Quality Ingredients</h4>
+                                <p class="text-gray-600">Fresh, locally sourced produce daily</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Traditional Cooking Methods</h4>
+                                <p class="text-gray-600">Time-honored recipes and techniques</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 luxury-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Generous Portions</h4>
+                                <p class="text-gray-600">Satisfying meals at great value</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="luxury-gradient text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition inline-flex items-center">
+                        <i class="fas fa-calendar-check mr-2"></i>Reserve a Table
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-100 rounded-xl p-6 text-center hover-lift">
+                        <i class="fas fa-dove text-red-700 text-4xl mb-3"></i>
+                        <h4 class="font-playfair font-bold text-gray-900">Pigeon Dishes</h4>
+                        <p class="text-gray-600 text-sm mt-2">5 Varieties</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-xl p-6 text-center hover-lift">
+                        <i class="fas fa-drumstick-bite text-red-700 text-4xl mb-3"></i>
+                        <h4 class="font-playfair font-bold text-gray-900">Chicken Specialties</h4>
+                        <p class="text-gray-600 text-sm mt-2">8 Options</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-xl p-6 text-center hover-lift">
+                        <i class="fas fa-bowl-rice text-red-700 text-4xl mb-3"></i>
+                        <h4 class="font-playfair font-bold text-gray-900">Rice Dishes</h4>
+                        <p class="text-gray-600 text-sm mt-2">6 Types</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-xl p-6 text-center hover-lift">
+                        <i class="fas fa-ice-cream text-red-700 text-4xl mb-3"></i>
+                        <h4 class="font-playfair font-bold text-gray-900">Desserts</h4>
+                        <p class="text-gray-600 text-sm mt-2">Traditional Sweets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-4">Customer <span class="text-red-700">Reviews</span></h2>
+                <p class="text-gray-600 text-lg">What our valued customers say about us</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl luxury-shadow hover-lift">
+                    <div class="flex text-gold mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Best pigeon ever, the rice delicious 😋"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 luxury-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">HH</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Hadeel Hamda</h4>
+                            <p class="text-gray-500 text-sm">Local Guide • 1 week ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl luxury-shadow hover-lift">
+                    <div class="flex text-gold mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Excellent Food: 5, Service: 5"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">AB</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Ahmed Banna</h4>
+                            <p class="text-gray-500 text-sm">Local Guide • 1 year ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl luxury-shadow hover-lift">
+                    <div class="flex text-gold mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"They have pigeon and chicken nuttery. The quantity is very sufficient. The service is excellent and fast."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 luxury-gradient rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">T</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Tarek</h4>
+                            <p class="text-gray-500 text-sm">Local Guide • 1 year ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center space-x-4">
+                    <div class="text-center">
+                        <h3 class="font-playfair text-5xl font-bold text-red-700">4.8</h3>
+                        <div class="flex text-gold justify-center">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-gray-600">Based on <strong>17 Reviews</strong></p>
+                        <p class="text-gray-500 text-sm">on Google Maps</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="py-20 luxury-gradient relative overflow-hidden">
+        <div class="absolute inset-0 hero-pattern"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold mb-6">Visit Us in <span class="text-gold">Mesaieed</span></h2>
+                    <p class="text-gray-200 text-lg mb-8">Experience authentic Qatari hospitality and flavors at our restaurant</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Location</h4>
+                                <p class="text-gray-200">VGJ9+PQ Mesaieed, Qatar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Opening Hours</h4>
+                                <p class="text-gray-200">Monday - Saturday: 12:00 PM - Late</p>
+                                <p class="text-gray-300 text-sm">Closed on Sundays</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Contact</h4>
+                                <p class="text-gray-200">+974 5992 2775</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Alnthry%20Restaurant%20%D9%85%D8%B7%D8%B9%D9%85%20%D8%A7%D9%84%D9%86%D8%AB%D8%B1%D9%8A&query_place_id=ChIJI1KoMic7RD4RKESOHHzFUyU" target="_blank" class="gold-gradient text-gray-900 px-6 py-3 rounded-full font-semibold hover:shadow-xl transition inline-flex items-center">
+                            <i class="fas fa-directions mr-2"></i>Get Directions
+                        </a>
+                        <a href="tel:+97459922775" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-red-800 transition inline-flex items-center">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-1">
+                    <div class="bg-white rounded-xl p-8">
+                        <h3 class="font-playfair text-2xl font-bold text-gray-900 mb-4">Quick Info</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between py-3 border-b">
+                                <span class="text-gray-600">Price Range</span>
+                                <span class="font-semibold text-gray-900">QAR 1-50 per person</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b">
+                                <span class="text-gray-600">Services</span>
+                                <span class="font-semibold text-gray-900">Dine-in, Drive-through, Delivery</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b">
+                                <span class="text-gray-600">Specialties</span>
+                                <span class="font-semibold text-gray-900">Pigeon & Chicken</span>
+                            </div>
+                            <div class="flex justify-between py-3">
+                                <span class="text-gray-600">Rating</span>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-semibold text-gray-900">4.8</span>
+                                    <div class="flex text-gold text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="luxury-gradient rounded-3xl p-12 text-center relative overflow-hidden">
+                <div class="absolute inset-0 hero-pattern opacity-10"></div>
+                <div class="relative z-10">
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-white mb-6">Ready to Experience Excellence?</h2>
+                    <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">Join us for an unforgettable dining experience with the best pigeon and chicken dishes in Qatar</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="tel:+97459922775" class="bg-white text-red-800 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition transform hover:scale-105 inline-flex items-center">
+                            <i class="fas fa-phone mr-2"></i>Reserve Now: +974 5992 2775
+                        </a>
+                        <a href="#menu" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-red-800 transition inline-flex items-center">
+                            <i class="fas fa-book-open mr-2"></i>View Full Menu
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center">
+                            <i class="fas fa-dove text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair text-2xl font-bold">Alnthry</h3>
+                            <p class="text-xs text-gray-400">مطعم النثري</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">Authentic Qatari cuisine specializing in pigeon and chicken dishes</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gold">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#menu" class="hover:text-gold transition">Menu</a></li>
+                        <li><a href="#specialties" class="hover:text-gold transition">Specialties</a></li>
+                        <li><a href="#reviews" class="hover:text-gold transition">Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gold">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Dine-in Experience</li>
+                        <li>Drive-through</li>
+                        <li>No-contact Delivery</li>
+                        <li>Catering Services</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gold">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2 text-gold"></i>VGJ9+PQ Mesaieed, Qatar</li>
+                        <li><i class="fas fa-phone mr-2 text-gold"></i>+974 5992 2775</li>
+                        <li><i class="fas fa-clock mr-2 text-gold"></i>Mon-Sat: 12 PM - Late</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="w-10 h-10 gold-gradient rounded-full flex items-center justify-center hover:shadow-lg transition">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 gold-gradient rounded-full flex items-center justify-center hover:shadow-lg transition">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 gold-gradient rounded-full flex items-center justify-center hover:shadow-lg transition">
+                            <i class="fab fa-whatsapp text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Alnthry Restaurant. All rights reserved.</p>
+                <p class="text-gray-500 text-sm mt-2">Crafted with <i class="fas fa-heart text-red-500"></i> in Mesaieed, Qatar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-2xl');
+            } else {
+                nav.classList.remove('shadow-2xl');
+            }
+        });
+    </script>
+</body>
+</html>
